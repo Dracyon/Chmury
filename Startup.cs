@@ -15,7 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace WebApp_OpenIDConnect_DotNet
+namespace AppointmentWebApp
 {
     public class Startup
     {

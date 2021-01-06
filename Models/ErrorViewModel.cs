@@ -1,8 +1,6 @@
-using System;
-
-namespace WebApp_OpenIDConnect_DotNet.Models
+namespace AppointmentWebApp.Models
 {
-    public class ErrorViewModel
+	public class ErrorViewModel
     {
         public string RequestId { get; set; }
 

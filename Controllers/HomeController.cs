@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AppointmentWebApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApp_OpenIDConnect_DotNet.Models;
+using System.Diagnostics;
 
-namespace WebApp_OpenIDConnect_DotNet.Controllers
+namespace AppointmentWebApp.Controllers
 {
-    [Authorize]
+	[Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

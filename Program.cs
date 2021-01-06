@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WebApp_OpenIDConnect_DotNet
+namespace AppointmentWebApp
 {
     public class Program
     {
