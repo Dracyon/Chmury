@@ -4,3 +4,22 @@
 }
 
 <h1>Appointments !!!!!</h1>
+
+<table class="table">
+    @foreach(var appoinment in Model.Appointments)
+    {
+    <tr>
+        <td>@appoinment.AppointmentName</td>
+        <td>@appoinment.AppointmentDate</td>
+        <td>@appoinment.DoctorId</td>
+        <td>@appoinment.IsAvaiable</td>
+        <td>@appoinment.LocationId</td>
+
+    </tr>
+    }
+
+
+</table>
+
+
+<div>@Model.Message</div>
