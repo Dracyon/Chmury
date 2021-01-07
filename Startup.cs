@@ -41,6 +41,7 @@ namespace AppointmentWebApp
             });
            services.AddRazorPages()
                 .AddMicrosoftIdentityUI();
+           services.AddRazorPages(configure => configure.RootDirectory = "/Views");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
