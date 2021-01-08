@@ -1,0 +1,35 @@
+﻿@page "{appointmentId:int?}"
+@model AppointmentWebApp.Views.Appoitments.EditAppointmentModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editting @Model.Appointment.AppointmentName</h2>
+<form method="post">
+
+    <input type="hidden" asp-for="Appointment.AppointmentId" />
+    <div class="form-group">
+        <label asp-for="Appointment.AppointmentName"></label>
+        <input asp-for="Appointment.AppointmentName" class="form-control" />
+        <span class="text-danger" asp-validation-for="Appointment.AppointmentName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Appointment.LocationId"></label>
+        <input asp-for="Appointment.LocationId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Appointment.DoctorId"></label>
+        <input asp-for="Appointment.DoctorId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Appointment.IsAvaiable"></label>
+        <select class="form-control" asp-for="Appointment.IsAvaiable">
+            <option value="False">No</option>
+            <option value="True">Yes</option>
+
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

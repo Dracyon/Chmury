@@ -11,5 +11,9 @@
 <div>DoctorId: @Model.Appointment.DoctorId</div>
 <div>Location: @Model.Appointment.LocationId</div>
 
+@if(Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
 
 <a asp-page="./List" class="btn-outline-secondary">All Restaurants</a>

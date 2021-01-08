@@ -13,6 +13,8 @@ namespace AppointmentWebApp.Views.Appoitments
 	{
 		private readonly IAppointmentData appointmentData;
 
+		[TempData]
+		public string Message { get; set; }
 		public Appointment Appointment { get; set; }
 
 		public DetailModel(IAppointmentData appointmentData)
@@ -22,7 +24,7 @@ namespace AppointmentWebApp.Views.Appoitments
 		public IActionResult OnGet(int appointmentId)
 		{
 			Appointment = appointmentData.GetById(appointmentId);
-			if(Appointment == null)
+			if (Appointment == null)
 			{
 				return RedirectToPage("./NotFound");
 			}

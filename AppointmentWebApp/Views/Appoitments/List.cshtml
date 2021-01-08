@@ -29,11 +29,16 @@
             <td>@appoinment.IsAvaiable</td>
             <td>@appoinment.LocationId</td>
             <td>
-                <a class="btn btn-lg" 
-                   asp-page="./Detail" 
+                <a class="btn btn-lg"
+                   asp-page="./Detail"
                    asp-route-appointmentId="@appoinment.AppointmentId">
-                    <i class="fa fa-info-circle" >
-
+                    <i class="fa fa-info-circle">
+                    </i>
+                </a>
+                <a class="btn btn-lg"
+                   asp-page="./EditAppointment"
+                   asp-route-appointmentId="@appoinment.AppointmentId">
+                    <i class="fa fa-edit">
                     </i>
                 </a>
             </td>
@@ -43,6 +48,8 @@
 
 
 </table>
+
+<a asp-page="./EditAppointment" class="btn btn-primary">Add New Appointment</a>
 
 
 <div>@Model.Message</div>
