@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentWebApp", "AppointmentWebApp\AppointmentWebApp.csproj", "{8DCFEEC2-0A85-4C7E-B96A-21C9184470B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentWebApp.Core", "AppoitmentWebApp.Core\AppointmentWebApp.Core.csproj", "{BEB7FDC3-E5E9-457B-AA10-A633F96CB345}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentWebApp.Core", "AppoitmentWebApp.Core\AppointmentWebApp.Core.csproj", "{BEB7FDC3-E5E9-457B-AA10-A633F96CB345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentWebApp.Data", "AppoitmentWebApp.Data\AppointmentWebApp.Data.csproj", "{64E637F6-161F-4A67-B49A-3790C40520D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppointmentWebApp.Data", "AppoitmentWebApp.Data\AppointmentWebApp.Data.csproj", "{64E637F6-161F-4A67-B49A-3790C40520D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

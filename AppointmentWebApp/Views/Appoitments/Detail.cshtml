@@ -1,0 +1,15 @@
+﻿@page "{appointmentId:int}"
+
+@model AppointmentWebApp.Views.Appoitments.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.Appointment.AppointmentName</h2>
+<div>Id: @Model.Appointment.AppointmentId</div>
+<div>Date: @Model.Appointment.AppointmentDate</div>
+<div>DoctorId: @Model.Appointment.DoctorId</div>
+<div>Location: @Model.Appointment.LocationId</div>
+
+
+<a asp-page="./List" class="btn-outline-secondary">All Restaurants</a>

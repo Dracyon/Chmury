@@ -10,24 +10,27 @@ using Microsoft.Extensions.Configuration;
 
 namespace AppointmentWebApp.Views.Appoitments
 {
-    public class ListModel : PageModel
-    {
+	public class ListModel : PageModel
+	{
 		private readonly IConfiguration config;
 		private readonly IAppointmentData appointmentData;
 
 		public string Message { get; set; }
-        public IEnumerable<Appointment> Appointments { get; set; }
+		public IEnumerable<Appointment> Appointments { get; set; }
+
+		[BindProperty(SupportsGet =true)]
+		public string SearchTerm { get; set; }
 
 		public ListModel(IConfiguration config, IAppointmentData appointmentData)
 		{
-            this.config = config;
-            this.appointmentData = appointmentData;
+			this.config = config;
+			this.appointmentData = appointmentData;
 		}
 
-        public void OnGet()
-        {
-            Message = config["Message"];
-            Appointments = appointmentData.GetAll();
-        }
-    }
+		public void OnGet()
+		{
+			Message = config["Message"];
+			Appointments = appointmentData.GetAppointmentByName(SearchTerm);
+		}
+	}
 }

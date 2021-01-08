@@ -9,7 +9,10 @@ namespace AppoitmentWebApp.Data
 {
 	public interface IAppointmentData
 	{
-		IEnumerable<Appointment> GetAll();
+		IEnumerable<Appointment> GetAppointmentByName(string name);
+		Appointment GetById(int id);
+
+
 	}
 
 	public class InMemoryAppointmentData : IAppointmentData
@@ -24,9 +27,20 @@ namespace AppoitmentWebApp.Data
 				new Appointment{ AppointmentId = 2, AppointmentName = "EasyMemorable", AppointmentDate = DateTime.Now.AddDays(1), DoctorId = 0, IsAvaiable = false, LocationId = 0, UserName = "Wojciech"}
 	 			};
 		}
-		public IEnumerable<Appointment> GetAll()
+		public IEnumerable<Appointment> GetAppointmentByName(string name = null)
 		{
-			return appointments.OrderBy(r => r.AppointmentId);
+			return
+				string.IsNullOrEmpty(name) ? appointments.
+				OrderBy(a => a.AppointmentName) :
+
+				appointments.
+				Where(a => a.AppointmentName.StartsWith(name)).
+				OrderBy(a => a.AppointmentId);								
+		}
+
+		public Appointment GetById(int id)
+		{
+			return appointments.SingleOrDefault(a => a.AppointmentId == id);
 		}
 	}
 }

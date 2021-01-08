@@ -2,20 +2,43 @@
 @model AppointmentWebApp.Views.Appoitments.ListModel
 @{
 }
+<link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
 
 <h1>Appointments !!!!!</h1>
 
-<table class="table">
-    @foreach(var appoinment in Model.Appointments)
-    {
-    <tr>
-        <td>@appoinment.AppointmentName</td>
-        <td>@appoinment.AppointmentDate</td>
-        <td>@appoinment.DoctorId</td>
-        <td>@appoinment.IsAvaiable</td>
-        <td>@appoinment.LocationId</td>
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-outline-secondary">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
 
-    </tr>
+<table class="table">
+    @foreach (var appoinment in Model.Appointments)
+    {
+        <tr>
+            <td>@appoinment.AppointmentName</td>
+            <td>@appoinment.AppointmentDate</td>
+            <td>@appoinment.DoctorId</td>
+            <td>@appoinment.IsAvaiable</td>
+            <td>@appoinment.LocationId</td>
+            <td>
+                <a class="btn btn-lg" 
+                   asp-page="./Detail" 
+                   asp-route-appointmentId="@appoinment.AppointmentId">
+                    <i class="fa fa-info-circle" >
+
+                    </i>
+                </a>
+            </td>
+
+        </tr>
     }
 
 
