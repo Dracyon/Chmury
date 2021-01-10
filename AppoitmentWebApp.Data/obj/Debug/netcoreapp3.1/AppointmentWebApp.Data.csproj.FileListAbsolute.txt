@@ -22,3 +22,6 @@ C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\obj\Debug
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\obj\Debug\netcoreapp3.1\AppointmentWebApp.Data.csproj.CopyComplete
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\obj\Debug\netcoreapp3.1\AppointmentWebApp.Data.dll
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\obj\Debug\netcoreapp3.1\AppointmentWebApp.Data.pdb
+C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\bin\Debug\netcoreapp3.1\AppointmentWebApp.Data.runtimeconfig.json
+C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\bin\Debug\netcoreapp3.1\AppointmentWebApp.Data.runtimeconfig.dev.json
+C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Data\obj\Debug\netcoreapp3.1\AppointmentWebApp.Data.genruntimeconfig.cache
