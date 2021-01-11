@@ -1,0 +1,23 @@
+﻿@page "{appointmentId:int?}" 
+@model AppointmentWebApp.Views.Appoitments.MarkAppointmnetModel
+@{
+    ViewData["Title"] = "Mark Appointment";
+}
+
+<h2>Marking @Model.Appointment.AppointmentName</h2>
+<form method="post">
+    <input type="hidden" asp-for="Appointment.AppointmentId" />
+    <div class="form-group">
+        <label asp-for="Appointment.IsAvaiable"></label>
+        <select class="form-control" asp-for="Appointment.IsAvaiable">
+            <option value="False">No</option>
+            <option value="True">Yes</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirm Change!</button>
+
+</form>
+
+<a asp-page="./List" class="btn btn-primary">See All Appointments</a>
+

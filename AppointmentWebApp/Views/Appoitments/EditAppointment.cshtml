@@ -14,19 +14,15 @@
         <input asp-for="Appointment.AppointmentName" class="form-control" />
         <span class="text-danger" asp-validation-for="Appointment.AppointmentName"></span>
     </div>
-    @*<div class="form-group">
-        <label asp-for="Appointment.Location.LocationName"></label>
-        <input asp-for="Appointment.Location.LocationName" class="form-control" />
-    </div>*@
+    <div class="form-group">
+        <label asp-for="Appointment.AppointmentDate"></label>
+        <input asp-for="Appointment.AppointmentDate" class="form-control" />
+    </div>
     <div class="form-group">
         <label asp-for="Appointment.Location.LocationName"></label>
         <select class="form-control" asp-for="Appointment.Location.LocationName" asp-items="Model.Locations">
         </select>
     </div>
-    @*<div class="form-group">
-            <label asp-for="Appointment.Doctor.DoctorName"></label>
-            <input asp-for="Appointment.Doctor.DoctorName" class="form-control" />
-        </div>*@
     <div class="form-group">
         <label asp-for="Appointment.Doctor.DoctorName"></label>
         <select class="form-control" asp-for="Appointment.Doctor.DoctorName" asp-items="Model.Doctors">
@@ -37,9 +33,9 @@
         <select class="form-control" asp-for="Appointment.IsAvaiable">
             <option value="False">No</option>
             <option value="True">Yes</option>
-
         </select>
     </div>
 
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
+

@@ -41,6 +41,12 @@
                     <i class="fa fa-edit">
                     </i>
                 </a>
+                <a class="btn btn-lg"
+                   asp-page="./MarkAppointmnet"
+                   asp-route-appointmentId="@appoinment.AppointmentId">
+                    <i class="fa fa-calendar-check">
+                    </i>
+                </a>
             </td>
 
         </tr>
@@ -51,5 +57,10 @@
 
 <a asp-page="./EditAppointment" class="btn btn-primary">Add New Appointment</a>
 
+
+@if (Model.TempMessage != null)
+{
+    <div class="alert alert-info">@Model.TempMessage</div>
+}
 
 <div>@Model.Message</div>

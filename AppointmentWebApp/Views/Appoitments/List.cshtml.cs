@@ -15,6 +15,8 @@ namespace AppointmentWebApp.Views.Appoitments
 		private readonly IConfiguration config;
 		private readonly IAppointmentData appointmentData;
 
+		[TempData]
+		public string TempMessage { get; set; }
 		public string Message { get; set; }
 		public IEnumerable<Appointment> Appointments { get; set; }
 

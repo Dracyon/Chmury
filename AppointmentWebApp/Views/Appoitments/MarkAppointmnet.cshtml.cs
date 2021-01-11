@@ -10,32 +10,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AppointmentWebApp.Views.Appoitments
 {
-	public class EditAppointmentModel : PageModel
+	public class MarkAppointmnetModel : PageModel
 	{
 		private readonly IAppointmentData appointmentData;
-
 		[BindProperty]
 		public Appointment Appointment { get; set; }
 		public IEnumerable<SelectListItem> Doctors { get; set; }
 		public IEnumerable<SelectListItem> Locations { get; set; }
-
-		public EditAppointmentModel(IAppointmentData appointmentData)
+		public MarkAppointmnetModel(IAppointmentData appointmentData)
 		{
 			this.appointmentData = appointmentData;
 		}
+
+
 		public ActionResult OnGet(int? appointmentId)
-		{			
+		{
 			Doctors = new SelectList(appointmentData.GetDoctors().Select(d => d.DoctorName));
 			Locations = new SelectList(appointmentData.GetLocations().Select(l => l.LocationName));
 			if (appointmentId.HasValue)
 			{
 				Appointment = appointmentData.GetById(appointmentId.Value);
-			}
-			else
-			{
-				Appointment = new Appointment();
-				Appointment.AppointmentDate = DateTime.Now;
-				//default values
 			}
 			if (Appointment == null)
 			{
@@ -46,23 +40,17 @@ namespace AppointmentWebApp.Views.Appoitments
 
 		public IActionResult OnPost()
 		{
-			if (!ModelState.IsValid)
-			{
-				Doctors = new SelectList(appointmentData.GetDoctors().Select(d => d.DoctorName));
-				Locations = new SelectList(appointmentData.GetLocations().Select(l => l.LocationName));
-				return Page();
-			}
 			if (Appointment.AppointmentId > 0)
 			{
+				var appointmentStatus = Appointment.IsAvaiable;
+				Appointment = appointmentData.GetById(Appointment.AppointmentId);
+				Appointment.IsAvaiable = appointmentStatus;
 				appointmentData.Update(Appointment);
 			}
-			else
-			{
-				appointmentData.Add(Appointment);
-			}
+
 			appointmentData.Commit();
-			TempData["Message"] = "Appointment Saved!";
-			return RedirectToPage("./Detail", new { appointmentId = Appointment.AppointmentId });
+			TempData["Message"] = "Appointment Status Changed!";
+			return RedirectToPage("./List");
 		}
 	}
 }

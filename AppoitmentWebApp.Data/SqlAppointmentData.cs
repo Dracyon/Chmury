@@ -73,7 +73,7 @@ namespace AppoitmentWebApp.Data
 		}
 
 		public Appointment Update(Appointment updatedAppointment)
-		{
+		{			
 			updatedAppointment.Doctor = GetSingleDoctor(updatedAppointment.Doctor.DoctorName);
 			updatedAppointment.Location = GetSingleLocation(updatedAppointment.Location.LocationName);
 			
