@@ -8,8 +8,8 @@
 <h2>@Model.Appointment.AppointmentName</h2>
 <div>Id: @Model.Appointment.AppointmentId</div>
 <div>Date: @Model.Appointment.AppointmentDate</div>
-<div>DoctorId: @Model.Appointment.DoctorId</div>
-<div>Location: @Model.Appointment.LocationId</div>
+<div>DoctorId: @Model.Appointment.Doctor.DoctorName</div>
+<div>Location: @Model.Appointment.Location.LocationName</div>
 
 @if(Model.Message != null)
 {

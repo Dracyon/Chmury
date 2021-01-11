@@ -8,6 +8,8 @@ C:\Users\w.kowalczyk\source\repos\Dracyon\AppoitmentWebApp.Core\obj\Debug\netcor
 C:\Users\w.kowalczyk\source\repos\Dracyon\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.dll
 C:\Users\w.kowalczyk\source\repos\Dracyon\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.pdb
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.deps.json
+C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.runtimeconfig.json
+C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.runtimeconfig.dev.json
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.dll
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.pdb
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.AssemblyInfoInputs.cache
@@ -15,6 +17,4 @@ C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.csproj.CoreCompileInputs.cache
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.dll
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.pdb
-C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.runtimeconfig.json
-C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\bin\Debug\netcoreapp3.1\AppointmentWebApp.Core.runtimeconfig.dev.json
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.genruntimeconfig.cache

@@ -4,14 +4,16 @@ using AppointmentWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AppointmentWebApp.Data.Migrations
 {
     [DbContext(typeof(AppointmentDbContext))]
-    partial class AppointmentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210111165952_doctorsandlocationstablesinit3")]
+    partial class doctorsandlocationstablesinit3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,23 +36,19 @@ namespace AppointmentWebApp.Data.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("nvarchar(80)");
 
-                    b.Property<int?>("DoctorId")
+                    b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsAvaiable")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("AppointmentId");
-
-                    b.HasIndex("DoctorId");
-
-                    b.HasIndex("LocationId");
 
                     b.ToTable("Appointments");
                 });
@@ -89,31 +87,6 @@ namespace AppointmentWebApp.Data.Migrations
                     b.HasKey("LocationId");
 
                     b.ToTable("Locations");
-                });
-
-            modelBuilder.Entity("AppoitmentWebApp.Core.Appointment", b =>
-                {
-                    b.HasOne("AppoitmentWebApp.Core.Doctor", "Doctor")
-                        .WithMany("Appointments")
-                        .HasForeignKey("DoctorId");
-
-                    b.HasOne("AppoitmentWebApp.Core.Location", "Location")
-                        .WithMany("Appointments")
-                        .HasForeignKey("LocationId");
-
-                    b.Navigation("Doctor");
-
-                    b.Navigation("Location");
-                });
-
-            modelBuilder.Entity("AppoitmentWebApp.Core.Doctor", b =>
-                {
-                    b.Navigation("Appointments");
-                });
-
-            modelBuilder.Entity("AppoitmentWebApp.Core.Location", b =>
-                {
-                    b.Navigation("Appointments");
                 });
 #pragma warning restore 612, 618
         }

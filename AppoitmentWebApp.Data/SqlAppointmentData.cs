@@ -1,5 +1,6 @@
 ﻿using AppointmentWebApp.Data;
 using AppoitmentWebApp.Core;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -36,10 +37,11 @@ namespace AppoitmentWebApp.Data
 
 		public IEnumerable<Appointment> GetAppointmentByName(string name)
 		{
-			var query = db.Appointments.
+			var query = db.Appointments.Include(d => d.Doctor).Include(l => l.Location).
 				Where(a => a.AppointmentName.StartsWith(name) || string.IsNullOrEmpty(name)).
 				OrderBy(a => a.AppointmentName).
 				Select(a => a);
+
 			return query;
 		}
 
@@ -51,7 +53,7 @@ namespace AppoitmentWebApp.Data
 		public Appointment Update(Appointment updatedAppointment)
 		{
 			var entity = db.Appointments.Attach(updatedAppointment);
-			entity.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+			entity.State = EntityState.Modified;
 			return updatedAppointment;
 		}
 	}

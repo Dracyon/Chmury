@@ -14,5 +14,7 @@ namespace AppointmentWebApp.Data
 
 		}
 		public DbSet<Appointment> Appointments { get; set; }
+		public DbSet<Doctor> Doctors { get; set; }
+		public DbSet<Location> Locations { get; set; }
 	}
 }

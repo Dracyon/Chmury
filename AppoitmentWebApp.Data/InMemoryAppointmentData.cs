@@ -13,9 +13,9 @@ namespace AppoitmentWebApp.Data
 		{
 			appointments = new List<Appointment>()
 			{
-				new Appointment{ AppointmentId = 1, AppointmentName = "First Appoinment", AppointmentDate = DateTime.Now, DoctorId = 0, IsAvaiable = true, LocationId = 0, UserName = "Wojciech"},
-				new Appointment{ AppointmentId = 2, AppointmentName = "Regular Apointment", AppointmentDate = DateTime.Now.AddDays(-1), DoctorId = 0, IsAvaiable = true, LocationId = 0, UserName = "Wojciech"},
-				new Appointment{ AppointmentId = 3, AppointmentName = "EasyMemorable", AppointmentDate = DateTime.Now.AddDays(1), DoctorId = 0, IsAvaiable = false, LocationId = 0, UserName = "Wojciech"}
+				new Appointment{ AppointmentId = 1, AppointmentName = "First Appoinment", AppointmentDate = DateTime.Now, Doctor = new Doctor {DoctorId = 1, DoctorName = "MrNice", DoctorType = DoctorTypes.Magician, Appointments = new List<Appointment>() }, IsAvaiable = true, Location = new Location{LocationId = 1, LocationName = "Warszawa", LocationAddresss = "Better 32/31", Appointments = new List<Appointment>() }, UserName = "Wojciech"},
+				new Appointment{ AppointmentId = 2, AppointmentName = "Regular Apointment", AppointmentDate = DateTime.Now.AddDays(-1), Doctor = new Doctor {DoctorId = 2, DoctorName = "MrNotNice", DoctorType = DoctorTypes.Dentis, Appointments = new List<Appointment>() }, IsAvaiable = true, Location = new Location{LocationId = 2, LocationName = "Wroclaw", LocationAddresss = "Wrose 32/31", Appointments = new List<Appointment>() }, UserName = "Wojciech"},
+				new Appointment{ AppointmentId = 3, AppointmentName = "EasyMemorable", AppointmentDate = DateTime.Now.AddDays(1), Doctor = new Doctor {DoctorId = 3, DoctorName = "MrSuperNice", DoctorType = DoctorTypes.Special, Appointments = new List<Appointment>() }, IsAvaiable = false, Location = new Location{LocationId = 3, LocationName = "Lodz", LocationAddresss = "Better 334/311", Appointments = new List<Appointment>() }, UserName = "Wojciech"}
 	 			};
 		}
 
@@ -63,8 +63,8 @@ namespace AppoitmentWebApp.Data
 			if (appointment != null)
 			{
 				appointment.AppointmentName = updatedAppointment.AppointmentName;
-				appointment.DoctorId = updatedAppointment.DoctorId;
-				appointment.LocationId = updatedAppointment.LocationId;
+				appointment.Doctor = updatedAppointment.Doctor;
+				appointment.Location = updatedAppointment.Location;
 				appointment.IsAvaiable = updatedAppointment.IsAvaiable;
 			}
 			return appointment;
