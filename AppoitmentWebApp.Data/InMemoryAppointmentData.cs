@@ -57,6 +57,26 @@ namespace AppoitmentWebApp.Data
 			return appointments.SingleOrDefault(a => a.AppointmentId == id);
 		}
 
+		public IEnumerable<Doctor> GetDoctors()
+		{
+			throw new NotImplementedException();
+		}
+
+		public IEnumerable<Location> GetLocations()
+		{
+			throw new NotImplementedException();
+		}
+
+		public Doctor GetSingleDoctor(string DoctorName)
+		{
+			throw new NotImplementedException();
+		}
+
+		public Location GetSingleLocation(string LocationName)
+		{
+			throw new NotImplementedException();
+		}
+
 		public Appointment Update(Appointment updatedAppointment)
 		{
 			var appointment = appointments.SingleOrDefault(a => a.AppointmentId == updatedAppointment.AppointmentId);

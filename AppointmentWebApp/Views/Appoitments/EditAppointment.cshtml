@@ -14,13 +14,23 @@
         <input asp-for="Appointment.AppointmentName" class="form-control" />
         <span class="text-danger" asp-validation-for="Appointment.AppointmentName"></span>
     </div>
-    <div class="form-group">
+    @*<div class="form-group">
         <label asp-for="Appointment.Location.LocationName"></label>
         <input asp-for="Appointment.Location.LocationName" class="form-control" />
+    </div>*@
+    <div class="form-group">
+        <label asp-for="Appointment.Location.LocationName"></label>
+        <select class="form-control" asp-for="Appointment.Location.LocationName" asp-items="Model.Locations">
+        </select>
     </div>
+    @*<div class="form-group">
+            <label asp-for="Appointment.Doctor.DoctorName"></label>
+            <input asp-for="Appointment.Doctor.DoctorName" class="form-control" />
+        </div>*@
     <div class="form-group">
         <label asp-for="Appointment.Doctor.DoctorName"></label>
-        <input asp-for="Appointment.Doctor.DoctorName" class="form-control" />
+        <select class="form-control" asp-for="Appointment.Doctor.DoctorName" asp-items="Model.Doctors">
+        </select>
     </div>
     <div class="form-group">
         <label asp-for="Appointment.IsAvaiable"></label>

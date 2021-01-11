@@ -12,6 +12,11 @@ namespace AppoitmentWebApp.Data
 		Appointment Update(Appointment updatedAppointment);
 		Appointment Add(Appointment newAppointment);
 		Appointment Delete(int id);
+		IEnumerable<Doctor> GetDoctors();
+		Doctor GetSingleDoctor(string DoctorName);
+		IEnumerable<Location> GetLocations();
+		Location GetSingleLocation(string LocationName);
+
 		int Commit();
 	}
 }

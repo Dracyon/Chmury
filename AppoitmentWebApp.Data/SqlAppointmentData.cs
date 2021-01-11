@@ -16,6 +16,8 @@ namespace AppoitmentWebApp.Data
 		}
 		public Appointment Add(Appointment newAppointment)
 		{
+			newAppointment.Doctor = GetSingleDoctor(newAppointment.Doctor.DoctorName);
+			newAppointment.Location = GetSingleLocation(newAppointment.Location.LocationName);
 			db.Add(newAppointment);
 			return newAppointment;
 		}
@@ -50,8 +52,31 @@ namespace AppoitmentWebApp.Data
 			return db.Appointments.Include(d => d.Doctor).Include(l => l.Location).SingleOrDefault(a => a.AppointmentId == id);
 		}
 
+		public IEnumerable<Doctor> GetDoctors()
+		{
+			return db.Doctors.OrderBy(d => d.DoctorName).ToList();
+		}
+
+		public IEnumerable<Location> GetLocations()
+		{
+			return db.Locations.OrderBy(d => d.LocationName).ToList();
+		}
+
+		public Doctor GetSingleDoctor(string DoctorName)
+		{
+			return db.Doctors.SingleOrDefault(d => d.DoctorName == DoctorName);
+		}
+
+		public Location GetSingleLocation(string LocationName)
+		{
+			return db.Locations.SingleOrDefault(l => l.LocationName == LocationName);
+		}
+
 		public Appointment Update(Appointment updatedAppointment)
 		{
+			updatedAppointment.Doctor = GetSingleDoctor(updatedAppointment.Doctor.DoctorName);
+			updatedAppointment.Location = GetSingleLocation(updatedAppointment.Location.LocationName);
+			
 			var entity = db.Appointments.Attach(updatedAppointment);
 			entity.State = EntityState.Modified;
 			return updatedAppointment;
