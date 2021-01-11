@@ -49,7 +49,7 @@ namespace AppointmentWebApp.Views.Appoitments
 			}
 
 			appointmentData.Commit();
-			TempData["Message"] = "Appointment Status Changed!";
+			TempData["TempMessage"] = "Appointment Status Changed!";
 			return RedirectToPage("./List");
 		}
 	}
