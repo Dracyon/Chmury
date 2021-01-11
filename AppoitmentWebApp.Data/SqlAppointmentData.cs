@@ -47,7 +47,7 @@ namespace AppoitmentWebApp.Data
 
 		public Appointment GetById(int id)
 		{
-			return db.Appointments.Find(id);
+			return db.Appointments.Include(d => d.Doctor).Include(l => l.Location).SingleOrDefault(a => a.AppointmentId == id);
 		}
 
 		public Appointment Update(Appointment updatedAppointment)
