@@ -43,6 +43,8 @@ namespace AppointmentWebApp
 			services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
 				.AddMicrosoftIdentityWebApp(Configuration.GetSection("AzureAd"));
 
+			//			services.AddMicrosoftIdentityPlatformAuthentication(Configuration).AddMsal(Configuration, new string[] { "User.Read", "Directory.Read.All" })
+			//services.AddMSGraphService(Configuration);
 			services.AddControllersWithViews(options =>
 			{
 				var policy = new AuthorizationPolicyBuilder()

@@ -29,7 +29,15 @@ namespace AppointmentWebApp.Views.Appoitments
 		public void OnGet()
 		{
 			Message = config["Message"];
-			Appointments = appointmentData.GetAppointmentByName(SearchTerm);
+			if (this.User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Administator"))
+			{
+				Appointments = appointmentData.GetAppointmentByName(SearchTerm);
+			}
+			else
+			{
+				Appointments = appointmentData.GetOnlyOpenAppointments(this.User.Identity.Name);
+			}
+			
 		}
 	}
 }

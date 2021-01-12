@@ -7,6 +7,7 @@ namespace AppoitmentWebApp.Data
 	public interface IAppointmentData
 	{
 		IEnumerable<Appointment> GetAppointmentByName(string name);
+		IEnumerable<Appointment> GetOnlyOpenAppointments(string name);
 		IEnumerable<Appointment> GetAppointmentForUser(string userName);
 		Appointment GetById(int id);
 		Appointment Update(Appointment updatedAppointment);

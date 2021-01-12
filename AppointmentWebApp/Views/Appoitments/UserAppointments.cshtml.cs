@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AppoitmentWebApp.Core;
 using AppoitmentWebApp.Data;
@@ -24,6 +25,9 @@ namespace AppointmentWebApp.Views.Appoitments
 		public void OnGet()
 		{
 			Appointments = appointmentData.GetAppointmentForUser(this.User.Identity.Name);
+
+			var check4 = this.User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Administator");
+			
 			if (!Appointments.Any())
 			{
 				Message = "You don't have any appointments";

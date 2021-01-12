@@ -72,6 +72,16 @@ namespace AppoitmentWebApp.Data
 			throw new NotImplementedException();
 		}
 
+		public IEnumerable<Appointment> GetOnlyOpenAppointments(string name)
+		{
+			throw new NotImplementedException();
+		}
+
+		public IEnumerable<Appointment> GetOnlyOpenAppointments()
+		{
+			throw new NotImplementedException();
+		}
+
 		public Doctor GetSingleDoctor(string DoctorName)
 		{
 			throw new NotImplementedException();

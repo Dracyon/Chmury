@@ -72,6 +72,16 @@ namespace AppoitmentWebApp.Data
 			return db.Locations.OrderBy(d => d.LocationName).ToList();
 		}
 
+		public IEnumerable<Appointment> GetOnlyOpenAppointments(string name)
+		{
+			var query = db.Appointments.Include(d => d.Doctor).Include(l => l.Location).
+				Where(a => a.IsAvaiable == true || a.UserName == name).
+				OrderBy(a => a.AppointmentName).
+				Select(a => a);
+
+			return query;
+		}
+
 		public Doctor GetSingleDoctor(string DoctorName)
 		{
 			return db.Doctors.SingleOrDefault(d => d.DoctorName == DoctorName);
