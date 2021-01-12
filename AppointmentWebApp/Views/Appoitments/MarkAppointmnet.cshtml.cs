@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AppoitmentWebApp.Core;
 using AppoitmentWebApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AppointmentWebApp.Views.Appoitments
 {
@@ -45,6 +43,7 @@ namespace AppointmentWebApp.Views.Appoitments
 				var appointmentStatus = Appointment.IsAvaiable;
 				Appointment = appointmentData.GetById(Appointment.AppointmentId);
 				Appointment.IsAvaiable = appointmentStatus;
+				Appointment.UserName = this.User.Identity.Name;
 				appointmentData.Update(Appointment);
 			}
 

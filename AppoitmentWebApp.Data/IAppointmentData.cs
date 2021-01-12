@@ -1,6 +1,5 @@
 ﻿using AppoitmentWebApp.Core;
 using System.Collections.Generic;
-using System.Text;
 
 
 namespace AppoitmentWebApp.Data
@@ -8,6 +7,7 @@ namespace AppoitmentWebApp.Data
 	public interface IAppointmentData
 	{
 		IEnumerable<Appointment> GetAppointmentByName(string name);
+		IEnumerable<Appointment> GetAppointmentForUser(string userName);
 		Appointment GetById(int id);
 		Appointment Update(Appointment updatedAppointment);
 		Appointment Add(Appointment newAppointment);
@@ -16,7 +16,6 @@ namespace AppoitmentWebApp.Data
 		Doctor GetSingleDoctor(string DoctorName);
 		IEnumerable<Location> GetLocations();
 		Location GetSingleLocation(string LocationName);
-
 		int Commit();
 	}
 }

@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AppoitmentWebApp.Data;
 using AppoitmentWebApp.Core;
+using AppoitmentWebApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace AppointmentWebApp.Views.Appoitments
 {

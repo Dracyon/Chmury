@@ -52,6 +52,11 @@ namespace AppoitmentWebApp.Data
 				OrderBy(a => a.AppointmentId);
 		}
 
+		public IEnumerable<Appointment> GetAppointmentForUser(string userName)
+		{
+			throw new NotImplementedException();
+		}
+
 		public Appointment GetById(int id)
 		{
 			return appointments.SingleOrDefault(a => a.AppointmentId == id);

@@ -18,3 +18,4 @@ C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.dll
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.pdb
 C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.genruntimeconfig.cache
+C:\Users\w.kowalczyk\source\repos\Dracyon\Chmury\AppoitmentWebApp.Core\obj\Debug\netcoreapp3.1\AppointmentWebApp.Core.csprojAssemblyReference.cache

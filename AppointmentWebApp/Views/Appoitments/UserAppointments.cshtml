@@ -1,0 +1,23 @@
+﻿@page
+@model AppointmentWebApp.Views.Appoitments.UserAppointmentsModel
+@{
+}
+<link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+
+<h1>Your Appointments!!</h1>
+
+
+<table class="table">
+    @foreach (var appoinment in Model.Appointments)
+    {
+        <tr>
+            <td>@appoinment.AppointmentName</td>
+            <td>@appoinment.AppointmentDate</td>
+            <td>@appoinment.Doctor.DoctorName</td>
+            <td>@appoinment.IsAvaiable</td>
+            <td>@appoinment.Location.LocationName</td>
+            </tr>
+    }
+</table>
+
+<div>@Model.Message</div>

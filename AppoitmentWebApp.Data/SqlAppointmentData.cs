@@ -47,6 +47,16 @@ namespace AppoitmentWebApp.Data
 			return query;
 		}
 
+		public IEnumerable<Appointment> GetAppointmentForUser(string userName)
+		{
+			var query = db.Appointments.Include(d => d.Doctor).Include(l => l.Location).
+				Where(a => a.UserName == userName).
+				OrderBy(a => a.AppointmentName).
+				Select(a => a);
+
+			return query;
+		}
+
 		public Appointment GetById(int id)
 		{
 			return db.Appointments.Include(d => d.Doctor).Include(l => l.Location).SingleOrDefault(a => a.AppointmentId == id);
@@ -73,10 +83,10 @@ namespace AppoitmentWebApp.Data
 		}
 
 		public Appointment Update(Appointment updatedAppointment)
-		{			
+		{
 			updatedAppointment.Doctor = GetSingleDoctor(updatedAppointment.Doctor.DoctorName);
 			updatedAppointment.Location = GetSingleLocation(updatedAppointment.Location.LocationName);
-			
+
 			var entity = db.Appointments.Attach(updatedAppointment);
 			entity.State = EntityState.Modified;
 			return updatedAppointment;
