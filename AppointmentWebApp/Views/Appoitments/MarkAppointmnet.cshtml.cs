@@ -45,9 +45,10 @@ namespace AppointmentWebApp.Views.Appoitments
 				Appointment.IsAvaiable = appointmentStatus;
 				Appointment.UserName = this.User.Identity.Name;
 				appointmentData.Update(Appointment);
+				appointmentData.Commit();
 			}
 
-			appointmentData.Commit();
+
 			TempData["TempMessage"] = "Appointment Status Changed!";
 			return RedirectToPage("./List");
 		}

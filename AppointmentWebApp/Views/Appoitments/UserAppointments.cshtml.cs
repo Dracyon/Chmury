@@ -23,7 +23,7 @@ namespace AppointmentWebApp.Views.Appoitments
 		}
 		public void OnGet()
 		{
-			Appointments = appointmentData.GetAppointmentByName(this.User.Identity.Name);
+			Appointments = appointmentData.GetAppointmentForUser(this.User.Identity.Name);
 			if (!Appointments.Any())
 			{
 				Message = "You don't have any appointments";
