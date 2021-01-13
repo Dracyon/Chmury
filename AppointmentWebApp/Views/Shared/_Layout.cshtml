@@ -31,6 +31,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Appoitments/UserAppointments">Your Appointments</a>
                         </li>
+                        @if (User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Administator"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Appoitments/AppointmentReport">Generate Report</a>
+                            </li>}
                     </ul>
                 </div>
             </div>

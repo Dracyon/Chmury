@@ -24,7 +24,12 @@ namespace AppointmentWebApp.Views.Appoitments
 			this.appointmentData = appointmentData;
 		}
 		public ActionResult OnGet(int? appointmentId)
-		{			
+		{
+			if (!this.User.HasClaim("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", "Administator"))
+			{
+				TempData["Message"] = "You don't have required claims to view this page!";
+				return RedirectToPage("./List");
+			}
 			Doctors = new SelectList(appointmentData.GetDoctors().Select(d => d.DoctorName));
 			Locations = new SelectList(appointmentData.GetLocations().Select(l => l.LocationName));
 			if (appointmentId.HasValue)

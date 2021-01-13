@@ -1,0 +1,25 @@
+﻿@page
+@model AppointmentWebApp.Views.Appoitments.AppointmentReportModel
+@{
+}
+<link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+
+<h1>Appointment Report!!</h1>
+
+
+<table class="table">
+    <tr>
+        <th>Name:</th>
+        <th>Date:</th>
+        <th>User identity:</th>
+    </tr>
+    @foreach (var appoinment in Model.Appointments)
+    {
+        <tr>
+            <td>@appoinment.AppointmentName</td>
+            <td>@appoinment.AppointmentDate</td>
+            <td>@appoinment.AppointedPerson</td>
+        </tr>
+
+    }
+</table>
